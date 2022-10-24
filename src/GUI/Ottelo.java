@@ -109,8 +109,10 @@ public class Ottelo {
         }
 
     }
-    public void presionarUnP(int i, int j){
-    
+    public void presionarUnP(int i, int j,char char1){
+    if (celdasJuego[i][j]=='p'){
+    celdasJuego[i][j]=char1;
+    }
     }
 
     public void buscar(char char1, char char2) {

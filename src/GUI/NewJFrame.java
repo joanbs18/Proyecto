@@ -23,6 +23,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
+import javax.swing.text.Position;
 
 /**
  *
@@ -33,6 +34,10 @@ public class NewJFrame extends javax.swing.JFrame {
     static JButton[][] cell;
     JPanel boardPanel;
     Ottelo o = new Ottelo();
+    private ArrayList<Jugador> jugadores;
+    
+    
+    
 
     /**
      * Creates new form NewJFrame
@@ -59,6 +64,10 @@ public class NewJFrame extends javax.swing.JFrame {
         }
 
         inicioJuego(0, 0);
+        Jugador j1= new Jugador("Joan",0,'0');
+        Jugador j2= new Jugador("Jn",1,'1');
+        jugadores.add(j2);
+        jugadores.add(j1);
     }
 
     private void inicioJuego(int i, int j) {
@@ -88,20 +97,21 @@ public class NewJFrame extends javax.swing.JFrame {
         }
 
     }
-
+private Jugador
     class Action implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            //System.out.println(e.getActionCommand());
+          
           for (int i = 0; i < 12; i++){
           for (int j = 0; j < 12; j++){
           if(e.getSource() == cell[i][j]){
               System.out.println(i+" "+j);
            inicioJuego(0,0);
            o.mostrar();
-           
+           o.presionarUnP(i, j, '0');
+           inicioJuego(0,0);
           
           }
           
